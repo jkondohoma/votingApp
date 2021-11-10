@@ -1,21 +1,25 @@
 //create a component using class
 //parent
 class ProductList extends React.Component {
-  constructor(props) {
-    super(props);
+//   constructor(props) {
+    // super(props);
 
-    this.state = {
-      products: [],
-    };
+    // this.state = {
+    //   products: [],
+    // };
+    state = {
+        products: [],
+      };
 
-    this.handleProductUpVote = this.handleProductUpVote.bind(this);
-  }
+    // this.handleProductUpVote = this.handleProductUpVote.bind(this);
+//   }
 
   componentDidMount() {
     this.setState({ products: Seed.products });
   }
 
-  handleProductUpVote(productId) {
+  handleProductUpVote = (productId) => {
+//   handleProductUpVote(productId) {
     // “First, we use map() to traverse the products array.
     // Importantly, map() returns a new array as
     //  opposed to modifying the array this.state.products.”
@@ -67,14 +71,21 @@ class ProductList extends React.Component {
 
 //child
 class Product extends React.Component {
-  constructor(props) {
-    super(props);
-    this.handleUpVote = this.handleUpVote.bind(this);
-  }
+//   constructor(props) {
+//     super(props);
+//     this.handleUpVote = this.handleUpVote.bind(this);
+//   }
 
-  handleUpVote() {
-    this.props.onVote(this.props.id);
-  }
+  //   “we can write handleUpVote as an arrow function.
+  //    This will ensure this inside the function is bound to the component”
+
+//   “we can drop constructor(). There is no need for the manual binding call.”
+
+
+  handleUpVote = () => this.props.onVote(this.props.id);
+  //   handleUpVote() {
+  //     this.props.onVote(this.props.id);
+  //   }
   render() {
     return (
       <div className="item">
