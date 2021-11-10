@@ -14,5 +14,8 @@
   "devDependencies": {
     "@fullstackio/live-server": "1.2.2",
     "concurrently": "^6.3.0"
+  },
+  "dependencies": {
+    "lint": "^0.7.0"
   }
 }
