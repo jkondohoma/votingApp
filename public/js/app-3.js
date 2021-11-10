@@ -1,6 +1,7 @@
-
+const Seed = require('seed');
 class ProductList extends React.Component {
   render() {
+
     const product = Seed.products[0];
     return (
       <div className='ui unstackable items'>
